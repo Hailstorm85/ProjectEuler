@@ -1,6 +1,7 @@
 from timer import Timer
 
 with Timer() as t:
+	
 	def reverseNumber(num):
 		rev = 0
 		while num > 0:
@@ -12,16 +13,29 @@ with Timer() as t:
 		return number == reverseNumber(number)
 		
 	start = 100
-	limit = 1000
 	maxPalin = 0
-
-	for i in range(start, limit):
-		for j in range(start, limit):
+	i = 999
+	
+	while i >= start:
+		
+		if i % 11 == 0:
+			j = 999
+			db = 1
+		else:
+			j = 990
+			db = 11		
+			
+		while j >= i:
 			number = i * j
+			if number < maxPalin:
+				break						
 			if checkPalindrome(number) and maxPalin < number:
 				maxPalin = number
 				a, b = i, j
+			j -= db
 			
+		i -= 1
+	
 	print a, b, maxPalin
-
+	
 print "Executed time = %.6f s" %t.secs
