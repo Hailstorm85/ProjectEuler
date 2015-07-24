@@ -3,7 +3,7 @@ import math
 import fractions 
 
 with Timer() as s:
-	limit = 5000000
+	limit = 5000
 	lim2 = limit // 2
 	mlimit = int(math.ceil(math.sqrt(lim2))) - 1
 	for a in xrange(2, mlimit):
